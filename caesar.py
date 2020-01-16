@@ -16,8 +16,9 @@ def encrypt(text,s):
 
     return result 
 
-#check the above function 
+# text string
 text = "ATTACKATONCE"
+# offset key
 s = 4
 print("Text : " + text)
 print("Shift : " + str(s))
