@@ -1,12 +1,8 @@
-
 flag = 0
-
 # get key from input
 key = input("Enter Key:")
-
 # replace spaces with ""
 key = key.replace(" ", "")
-
 # upper case the string
 key = key.upper()
 
@@ -17,19 +13,15 @@ def matrix(x, y, initial):
 
 result = list()
 
-
 for c in key:
-    """
-    If J then change to I
-    """
-
     if c not in result:
         if c == 'J':
             result.append('I')
         else:
             result.append(c)
+
+# chr will retrurn char from ascii int parameter
 for i in range(65, 91):
-    # storing other character
     if chr(i) not in result:
         if i == 73 and chr(74) not in result:
             result.append("I")
@@ -38,18 +30,24 @@ for i in range(65, 91):
             pass
         else:
             result.append(chr(i))
+
 k = 0
-my_matrix = matrix(5, 5, 0)  # initialize matrix
-for i in range(0, 5):  # making matrix
+my_matrix = matrix(5, 5, 0)
+# initialize matrix
+for i in range(0, 5):
+    # making matrix
     for j in range(0, 5):
         my_matrix[i][j] = result[k]
         k += 1
 
 
-def locindex(c):  # get location of each character
+def locindex(c):  
+    # get location of each character
     loc = list()
+    # switch J with I
     if c == 'J':
         c = 'I'
+        # enumerate adds to list
     for i, j in enumerate(my_matrix):
         for k, l in enumerate(j):
             if c == l:
@@ -58,8 +56,9 @@ def locindex(c):  # get location of each character
                 return loc
 
 
-def encrypt():  # Encryption
-    msg = str(input("ENTER MSG:"))
+def encrypt():  
+    # Encryption
+    msg = str(input("ENTER MSG TO DECRYPT:"))
     msg = msg.upper()
     msg = msg.replace(" ", "")
     i = 0
@@ -87,7 +86,8 @@ def encrypt():  # Encryption
         i = i+2
 
 
-def decrypt():  # decryption
+# decryption
+def decrypt():
     msg = str(input("ENTER CIPHER TEXT:"))
     msg = msg.upper()
     msg = msg.replace(" ", "")
