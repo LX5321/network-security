@@ -17,7 +17,7 @@ def encrypt(text,s):
     return result 
 
 # text string
-text = "ATTACKATONCE"
+text = "FLYTHEARROWS"
 # offset key
 s = 4
 print("Text : " + text)
