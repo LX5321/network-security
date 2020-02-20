@@ -53,6 +53,7 @@ def generate_keypair(p, q):
         raise ValueError('p and q cannot be equal')
     #n = pq
     n = p * q
+    print "N: ", n
 
     # Phi is the totient of n
     phi = (p-1) * (q-1)
@@ -65,7 +66,9 @@ def generate_keypair(p, q):
     while g != 1:
         e = random.randrange(1, phi)
         g = gcd(e, phi)
+        
 
+    print "E: ", e
     # Use Extended Euclid's Algorithm to generate the private key
     d = multiplicative_inverse(e, phi)
 
