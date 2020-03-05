@@ -30,11 +30,6 @@ def multiplicative_inverse(e, phi):
         return d + phi
 
 
-'''
-Tests to see if a number is prime.
-'''
-
-
 def is_prime(num):
     if num == 2:
         return True
@@ -96,9 +91,6 @@ def decrypt(pk, ciphertext):
 
 
 if __name__ == '__main__':
-    '''
-    Detect if the script is being run directly by the user
-    '''
     print "RSA Encrypter/ Decrypter"
     p = int(raw_input("Enter a prime number (17, 19, 23, etc): "))
     q = int(raw_input("Enter another prime number (Not one you entered above): "))
